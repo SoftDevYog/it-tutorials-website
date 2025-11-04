@@ -1,0 +1,249 @@
+/* ==========================================================
+   🌐 GLOBAL STYLES (applies to all elements)
+   ========================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif; /* Clean Google font */
+}
+
+body {
+  background-color: #f9f9f9; /* Light background for readability */
+  color: #333; /* Default text color */
+}
+
+/* ==========================================================
+   🧭 HEADER STYLING (Top Navigation Bar + Hamburger Menu)
+   ========================================================== */
+header {
+  background-color: #0d47a1; /* Royal Blue */
+  color: white;
+  display: flex;
+  justify-content: space-between; /* Logo left, menu right */
+  align-items: center;
+  padding: 1rem 2rem;
+  position: sticky; /* Keeps header visible when scrolling */
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* 🔘 Hamburger icon (hidden on desktop) */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* 🔗 Navigation menu styling */
+nav {
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+  overflow: hidden;
+  opacity: 1;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #bbdefb; /* Lighter blue on hover */
+}
+
+/* ==========================================================
+   🌟 HERO SECTION (Main Banner)
+   ========================================================== */
+.hero {
+  text-align: center;
+  padding: 5rem 1rem;
+  background: linear-gradient(120deg, #1976d2, #0d47a1); /* Blue gradient */
+  color: white;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* 🔘 Button styling */
+.btn {
+  background: white;
+  color: #0d47a1;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background: #0d47a1;
+  color: white;
+}
+
+/* ==========================================================
+   📘 CONTENT SECTIONS (Tutorials, Tips, Jobs)
+   ========================================================== */
+.content-section {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.content-section h2 {
+  margin-bottom: 1.5rem;
+  color: #0d47a1;
+}
+
+/* 📦 Container for cards */
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap; /* Makes it responsive */
+}
+
+/* 🧩 Individual card design */
+.card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* ==========================================================
+   📱 FOOTER STYLING
+   ========================================================== */
+footer {
+  background-color: #002171; /* Deep Navy Blue */
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+footer a {
+  color: #90caf9;
+  text-decoration: none;
+}
+
+/* ==========================================================
+   📱 RESPONSIVE DESIGN
+   ========================================================== */
+
+/* 🖥️ For tablets and smaller screens */
+@media (max-width: 1024px) {
+  nav ul {
+    gap: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .card-container {
+    gap: 1rem;
+  }
+}
+
+/* 📱 For mobile phones */
+@media (max-width: 768px) {
+  /* Show hamburger and hide nav initially */
+  .menu-toggle {
+    display: block;
+    color: white;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #0d47a1;
+    max-height: 0;
+    opacity: 0;
+  }
+
+  nav.active {
+    max-height: 300px; /* Expands when menu is active */
+    opacity: 1;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    padding: 0.5rem 1rem;
+  }
+
+  nav li {
+    width: 100%;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .hero {
+    padding: 3rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .content-section {
+    padding: 2rem 1rem;
+  }
+
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+}
+
+/* 📱 For very small screens */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* ==========================================================
+   🚀 FUTURE ENHANCEMENTS
+   ==========================================================
+   - Add dark/light theme to
